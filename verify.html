@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verify a Certificate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="seal-corner top-left"></div>
+  <div class="seal-corner top-right"></div>
+  <div class="seal-corner bottom-left"></div>
+  <div class="seal-corner bottom-right"></div>
+
+  <main class="wrapper">
+    <header class="masthead">
+      <span class="eyebrow">Office of the Registrar</span>
+      <h1>Verify a Certificate</h1>
+      <p class="tagline">Enter the verification ID printed on the certificate to confirm it was genuinely issued.</p>
+    </header>
+
+    <section class="panel">
+      <form id="verify-form" novalidate>
+        <div class="field">
+          <label for="certId">Verification ID</label>
+          <input type="text" id="certId" name="certId" placeholder="CERT-XXXXX-XXXXX" required>
+        </div>
+        <button type="submit"><span class="btn-label">Verify</span></button>
+      </form>
+
+      <div id="verify-status" class="status" role="status" aria-live="polite"></div>
+
+      <div id="verify-result" class="result hidden">
+        <div class="result-seal">✓</div>
+        <div class="result-details">
+          <p class="result-title">Certificate is authentic</p>
+          <p class="result-id" id="v-name"></p>
+          <p class="result-date" id="v-course"></p>
+          <p class="result-date" id="v-date"></p>
+        </div>
+      </div>
+    </section>
+
+    <p class="back-link"><a href="index.html">← Back to generator</a></p>
+  </main>
+
+  <script src="verify.js"></script>
+</body>
+</html>
